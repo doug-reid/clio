@@ -6,9 +6,11 @@ import chalk from 'chalk';
 // import ora from "ora";           // Uncomment to use spinners
 import figlet from 'figlet';
 
+const { version, description } = createRequire(import.meta.url)("./package.json");
+
 program
-    .version('0.1.0')
-    .description('A new CLI app')
+    .version(version)
+    .description(description)
     .option('-n, --name <name>', 'specify a name', 'World')
     .option('-f, --figlet', 'use figlet')
     .action((options) => {
