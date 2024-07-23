@@ -1,12 +1,15 @@
 #! /usr/bin/env node
 
-import { program } from 'commander';
+import { Command } from 'commander';
 import chalk from 'chalk';
 // import inquirer from "inquirer"; // Uncomment to use prompt
 // import ora from "ora";           // Uncomment to use spinners
 import figlet from 'figlet';
 
-const { version, description } = createRequire(import.meta.url)("./package.json");
+const program = new Command();
+const { version, description } = createRequire(import.meta.url)(
+    './package.json',
+);
 
 program
     .version(version)
